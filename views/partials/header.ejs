@@ -2,66 +2,56 @@
 <html>
   <head>
     <title>GuestAdvisor</title>
-    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAASyeAHbF/AAZRIsAaXFsAHDB9wAzVa0An9L3AAYUdgAIDGMAABs5AHR3dAAxXLsAKEdZAJDq/wA1LisAXaDqAMny/wDC+P8AAAAaAH16dAAXQZ0AAABMAAAVbABBYGUAMlxxABxKjAAAGj0ADRp/ABtXkQBiv/8AVGhnAAk8nAAoN3cA4vX/ADFYlgBBkM8AwvD+AChAfwASM60AAAsuAOP4/wCJ1foARE1RAHbB8QAkVr4AUWRrABI3mgALGIYA3u/4ABEdgABdYmAADR2RABU8awBQTEwAdsv3ABc6qwBqYmAAdLvzACg3PwA0NjkAU6XoABQqhgCd8f8ASXqCANH8/wA3PDkAREuTAG2ewQAAAFgA1v//ABQvTwAEFZEATUE7ACBOtgDe//8AAi+CAJTO7wAfVXkAQTg0AOL//wAAGloA6P//AO38/wADOGkAGUB7AJvd/wCU5v8ABAwvAD49egANL6wAUJTYAHqgrABIcqMA/P//ABdQqgARJYYAOXLFAFNThgD///8ARlJgAAsiPACEzPcADiY5ADlgtgBlvv8Aa7n0ABthvQBlj8UA2P3/AIy98AAAAFsAiN7/AB85gAAIPX4AtO//AA4kmwASRq8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFC4AAAAAAAAAAAAAAAAAOVUYAAAAAAAAAAAAAAAAC0wsDQAAAAAAAAAAAAAAQiBuIjMAAAAAAAAAAAArVAE6IxZJAAAAAAAAFApRAwZLUjJrFAAAABRnR18+HHQmVlBDWAAAPDVyL2ZxSGAnIW0lUzsAGx5EbFc3EVkXGkFjXlwUAGQ9agxzKQcSMV1FYkZPAAAAHWkFOFtNPwkINFoTAAAAAABlJHACSipvMC11NgAAAAAAABQoGQ4QYRVoDwAAAAAAAAAAAABJH05ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAD//AAA//gAAP/wAAD/4AAA/4AAAPwAAADgAQAAgAEAAAABAAAAAwAAgAcAAMAHAADgDwAA/B8AAP//AAA=" rel="icon" type="image/x-icon"></link>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
-    <link href='https://fonts.googleapis.com/css?family=Amatic+SC:700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='/stylesheets/style.css'></link>
     <script src="/javascripts/application.js"></script>
   </head>
   <body>
-    <div class="row">
-      <nav class="navbar navbar-inverse header">
-        <div class="row container-fluid">
-          <div class="navbar-header col-md-2 col-sm-2 col-xs-2">
-            <a style="margin-left: 2%; color: #EFCA08" class="logo navbar-brand" href="/users">GuestAdvisor</a>
-          </div>
-          <div class="navbar-brand col-md-2 col-sm-2 col-xs-2">
+    <nav class="navbar navbar-inverse navbar-static-top" style='height: 75px; border-bottom: 1px solid #fff;'>
+      <div class='container-fluid'>
+        <div class="navbar-header col-sm-4">
+          <a style="color: #335e91; text-shadow: 1px 1px #fff;" class="logo navbar-brand" href="/users">GuestAdvisor</a>
+        </div>
+        <div class="col-xs-4">
+          <form class="navbar-form text-center" role="search">
+            <div class="form-group">
+              <input type="text" id ="search-term" class="form-control" placeholder="Search by email">
+            </div>
+            <button type="submit" id ="submitit" class="btn btn-default">Submit</button>
+          </form> 
+        </div>
+        <div class="col-xs-4 text-right">
+          <ul class="nav navbar-nav pull-right">
             <% if (user) { %>
-              <p style="color: #EFCA08; font-family: 'PT Sans Narrow', sans-serif">Hello <%= user.name %>!</p>
+            <li><a href='/users' style="color: #335e91; text-shadow: 1px 1px #253c87"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+            <li><a href="/logout" style="color: #335e91; text-shadow: 1px 1px #253c87"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
             <% } else { %>
-              <p style="color: #EFCA08">Please Login</p>
+              <li><a href="/login" style="color: #335e91; text-shadow: 1px 1px #253c87"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li><a href="/new_user" style="color: #335e91; text-shadow: 1px 1px #253c87"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <% } %>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-4">
-            <form class="navbar-form navbar-left" role="search">
-              <div class="form-group">
-                <input type="text" id ="search-term" class="form-control" placeholder="Search by email">
-              </div>
-              <button type="submit" id ="submitit" class="btn btn-default">Submit</button>
-            </form> 
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-4">
-            <ul class="nav navbar-nav navbar-right">
-              <% if (user) { %>
-              <li><a href='/users' style="color: #EFCA08"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-              <li><a href="/logout" style="color: #EFCA08"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-              <% } else { %>
-                <li><a href="/login" style="color: #EFCA08"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                <li><a href="/new_user" style="color: #EFCA08"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <% } %>
-            </ul>
-          </div>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
+    <div class='container-fluid'>
+      <div class="panel panel-default col-xs-3">
+        <div>
+          <h2 class="text-center">Latest Reviews</h2>
+        </div>
+        <div class="panel-body">
+            <div>
+              <ul class='list-group' id="live">
+                <% for (i=0;i<5;i++) { %>
+                  <li class='list-group-item'><span><a href=<%='../users/'+reviews_main[i].user_ID %>><%=reviews_main[i].userName %></a> reviewed <a href=<%='/guests/'+ reviews_main[i].guest_ID %>><%=reviews_main[i].guestName %></a> </span></li>
+                <% } %>
+              </ul>
+            </div> 
+        </div>
     </div>
-    <div class="row">
+      
 
-      <!-- LIVE FEED FILLER CONTENT -->
-      <div class="col-md-3 col-sm-3 col-xs-3">
-        <div class="panel panel-default" id="live_feed_panel">
-          <div>
-            <h2 style="text-align: center" class="panel-title">Latest Review</h2>
-          </div>
-          <div class="panel-body">
-            <ul style="text-align: center; list-style: none">
-              <div id="live">
-              </div> 
-             </ul> 
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1 col-sm-1 col-xs-1">
-      </div>
 

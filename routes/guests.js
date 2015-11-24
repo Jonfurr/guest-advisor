@@ -10,30 +10,29 @@ router.get('/:id', function(req, res, next) {
   var id = req.params.id;
   var guestName = req.params.name;
   var user= req.user;
-  if (user){
-  Review.find({guest_ID: id}, " ", function(err, reviews) {
-    console.log(reviews)
-    if (err) console.log(err);
-
-  
-  
-
-  Guest.findOne({ _id:req.params.id }, " ", function(err, guests) {
-    if (err) console.log(err);
-
-    res.render('guest', {
-      title: "Guest Page",
-      guest: guests,
-      user: req.user,
-      guestID : id, 
-      guestName: guests.name,
-      reviews: reviews });
+  if (user) {
+    Review.find().sort({'updated_at': 'desc'}).exec(function (err, reviews_main) {
+      Review.find({guest_ID: id}, " ", function(err, reviews) {
+        console.log(reviews)
+        if (err) {console.log(err);}
+          Guest.findOne({ _id:req.params.id }, " ", function(err, guests) {
+            if (err) {console.log(err);}
+              res.render('guest', {
+                guest: guests,
+                user: req.user,
+                guestID : id, 
+                guestName: guests.name,
+                reviews: reviews,
+                reviews_main: reviews_main });
+        });
       });
-    })
+    });
   }
+
   else {
     res.redirect('/login')
   }
+      
 });
 
 router.post('/:id', function(req, res, next) {

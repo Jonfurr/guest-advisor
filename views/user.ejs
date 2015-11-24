@@ -1,31 +1,32 @@
 <% include ./partials/header %>
     
-        <div class="panel panel-default col-md-4 col-sm-4 col-xs-4" id="user-panel">
-          <div >
-            <h2 id="user_recent_reviews" class="panel-title"><%= user.name %>'s Reviews</h2>
-          </div>
-          <div class="panel-body" id="user_rev">
-            <ul style="text-align: center; list-style: none">
-               <% for (i=reviews.length-1; i>=0; i--){ %>
-                 <li><a href="/guests/<%= reviews[i]['guest_ID']%>"> <%= reviews[i]['guestName'] %> </a> <br>Review: <%= reviews[i]['comment'] %> | Rating: <%=reviews[i]['ind_rating'] %></li><br><br>
-        <% } %>
-            </ul>
-          </div>
-        </div>
+  <div class="panel panel-default col-xs-5" id="user-panel">
+    <div >
+      <h2 class="text-center"><%= reviews[0].userName %>'s Reviews</h2>
     </div>
-<div class="row panel panel-default col-md-3 col-sm-3 col-xs-3" id="review_panel">
-    <form style="text-align: center" action="/users" method="post">
-        <h3 class="review_guest">Review a Guest</h3>
-        <fieldset>
-            <label for="name">Guest Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter guest's name" />
-            <br />
-            <label for="email">Guest Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter guest's email" /></br>
-            <div id="spacer" class="row col-md-12 col-sm-12 col-xs-12"></div>
-            <input type="submit" value="Submit" />
-        </fieldset>
-    </form>
-</div>
+    <div class="panel-body" id="user_rev">
+      <ul class='list-group' style="list-style: none">
+         <% for (i=reviews.length-1; i>=0; i--){ %>
+           <li class='user_reviews list-group-item'><a href="/guests/<%= reviews[i]['guest_ID']%>"> <%= reviews[i]['guestName'] %> </a> <br>Review: <%= reviews[i]['comment'] %><br> Rating: <%=reviews[i]['ind_rating'] %></li>
+          <% } %>
+      </ul>
+    </div>
+  </div>
+  <div class="row panel panel-default col-xs-3" id="review_panel">
+      <form action="/users" method="post">
+          <h2 class="review_guest text-center">Review a Guest</h2>
+          <div class='well'>
+            <fieldset>
+                <label for="name">Guest Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter guest's name" />
+                <br />
+                <label for="email">Guest Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter guest's email" />
+                </br></br>
+                <input  class='submit' type="submit" value="Submit" />
+            </fieldset>
+          </div>
+      </form>
+  </div>
 
 <% include ./partials/footer %>

@@ -30,8 +30,6 @@ router.get('/guests', function(req, res) {
   console.log(err);
  }
     res.json(guests);
-
-   
   });
 });
 

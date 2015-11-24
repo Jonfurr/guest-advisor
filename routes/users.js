@@ -12,18 +12,39 @@ var LocalStrategy = require('passport-local').Strategy;
 	router.get('/', function(req, res, next) {
 		var user = req.user
 		if (user) {
-			Review.find({user_ID: user.id}, " ", function(err, reviews) {
-			    if (err) console.log(err);
-			res.render('user', {
-			      user: req.user,
-			      reviews: reviews
-			    });
+			Review.find().sort({'updated_at': 'desc'}).exec(function (err, reviews_main) {    
+				Review.find({user_ID: user.id}, " ", function(err, reviews) {
+				    if (err) console.log(err);
+				res.render('user', { user: req.user, reviews: reviews, reviews_main : reviews_main });
+				});
 			});
 		}
 		else {
 			res.redirect('/login');
 		}
 	});
+
+	router.get('/:id', function(req, res, next) {
+  		var id = req.params.id;
+  		var guestName = req.params.name;
+  		var user= req.user;
+  		if (user) {
+		    Review.find().sort({'updated_at': 'desc'}).exec(function (err, reviews_main) {
+		      Review.find({user_ID: id}, " ", function(err, reviews) {
+		        if (err) {console.log(err);}
+		          User.findOne({ _id:req.params.id }, " ", function(err, users) {
+		            if (err) {console.log(err);}
+		              res.render('user', {
+		                user: user,
+		                userID : id, 
+		                userName: users.name,
+		                reviews: reviews,
+		                reviews_main: reviews_main });
+		        });
+		      });
+		    });
+		  }
+		 });
 
 	router.post('/', function(req, res, next){
 		var name = req.body.name;

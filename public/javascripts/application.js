@@ -24,7 +24,7 @@ $(function () {
          },
          
         
-         minLength: 4, 
+         minLength: 1, 
          
          focus: function (event, ui) { 
             this.value = ui.item.label; 
@@ -51,28 +51,28 @@ $(function () {
 
    // }
 
-   function updateContent() {
-      var updateCheck = 700;
-      var rightNow = Date.now();
-      var updateSince = rightNow - updateCheck; 
+   // function updateContent() {
+   //    var updateCheck = 500;
+   //    var rightNow = Date.now();
+   //    var updateSince = rightNow - updateCheck; 
 
-        $.ajax ({
-         type: "GET",
-         url: "/api/reviews/",
-         dataType: "json",
-         data: { 
-            updateSince: updateSince
-          },
-         success: function(data, textStatus, jqXHR) {
-            // check for duplicates
-            for (var i = 0; i < data.length; i++) {
-               $('#live').html( "<li><a href='/guests/"+data[i]['guest_ID']+"'>" + data[i]['guestName']+ "</a>" + ' was reviewed by ' + data[i]['userName'] + "</li>");
-            }
-         }
-      });
+   //      $.ajax ({
+   //       type: "GET",
+   //       url: "/api/reviews/",
+   //       dataType: "json",
+   //       data: { 
+   //          updateSince: updateSince
+   //        },
+   //       success: function(data, textStatus, jqXHR) {
+   //          // check for duplicates
+   //          for (var i = 0; i < data.length; i++) {
+   //             $('#live').html( "<li><a href='/guests/"+data[i]['guest_ID']+"'>" + data[i]['guestName']+ "</a>" + ' was reviewed by ' + data[i]['userName'] + "</li>");
+   //          }
+   //       }
+   //    });
     
     
-   }
-   //updateContent();
-   setInterval(updateContent, 700);
+   // }
+   // //updateContent();
+   // setInterval(updateContent, 500);
 });

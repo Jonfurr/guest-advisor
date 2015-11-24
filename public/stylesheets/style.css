@@ -1,126 +1,100 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  padding: 0px 5px 0px 5px;
-  background-image: url(/images/grand_budapest_copy.jpg);
-  background-position: top;
+  background-image: url(/images/hotel.jpg);
+  background-position: top left;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  margin: 0%;    
 }
 
-h4 {
-  text-align: center;
-  font-family: 'Amatic SC', cursive;
-  font-size: 25px;
-  padding: 0px;
+#live {
+  list-style: none;
 }
 
+.container {
+  width: 100%;
+  margin: 0px;
+}
+
+.well {
+  margin-top: 1em;
+  background-color: #fff;
+}
 .navbar-inverse {
-  background-color: #2b0081;
+  background-color: #000;
+  padding: 5px;
 }
 
 .logo {
-  font-size: 35px;
-  font-family: 'Amatic SC', cursive;
-  color: #fae596;
+  font-size: 2.5em;
+  font-family: 'Monoton', cursive;
+  color: #335e91;
 }
 
-#login {
-  height: 200px;
-}
 
 #login_here {
   text-align: center;
-  font-family: 'Amatic SC', cursive;
-  font-size: 35px;
+  font-size: 1.5em;
 }
 
-#sign_up {
-  height: 200px;
+input {
+  border: none;
+  border-bottom: 1px solid #000;
+}
+
+.submit {
+ padding: 5px;
+ border: 1px solid #000; 
+ margin: 5px 0;
 }
 
 #sign-up-link {
-    font-family: 'Amatic SC', cursive;
-    font-size: 25px;
+  text-align: center;
+    font-size: .7em;
 }
 
 #new_user {
   text-align: center;
-  font-family: 'Amatic SC', cursive;
-  font-size: 35px;  
+  font-size: 1.5em;  
 }
 
-.review_guest {
-  font-family: 'Amatic SC', cursive;
-  font-size: 35px;
-}
 
 #user_rev {
-  margin: 2px 0px 0px 0px;
-  height: 260px;
+  height: 600px;
   overflow: scroll;
 }
 
-#guest_rev {
-  margin: 0px 0px 0px 15px;
-  height: 200px;
-}
-
-#user_recent_reviews {
-  text-align: center; 
-  font-family: 'Amatic SC', cursive;
-  font-size: 35px;
-}
-
-#guest-panel {
-  margin-top: -10px;
-}
-
-
 #guest_recent {
-  height: 225px;
+  height: 600px;
   overflow: scroll;
 }
 
 #guest_name {
-  font-family: 'Amatic SC', cursive;
-  font-size: 35px;
+  font-size: 2.5em;
 
 }
 
 .panel-title {
-  font-family: 'Amatic SC', cursive;
-  font-size: 35px;
+  font-size: 2.5em;
 }
 
 .panel {
-  background-image: url(/images/marble.jpg);
-  border-radius: 25%;
-}
-
-#live_feed_panel {
-  height: 200px;
-}
-
-#review_panel {
-  margin: 0px 0px 0px 1px;
-  height: 200px;
+  background-color: rgba(255,255,255,.85);
+  border: 1px solid #335e91;
+  margin: 3px;
 }
 
 a {
-  color: #00B7FF;
-}
-
-#spacer {
-	height: 10px;
-}
-
-#sign-up-spacer {
-  height: 10px;
+  color: #335e91;
 }
 
 .ui-helper-hidden-accessible { 
+  text-align: center;
   display:none; 
 }
 
 .ui-autocomplete {
+  text-align: center;
   position: absolute;
   top: 100%;
   left: 0;
@@ -169,3 +143,5 @@ a {
     }
   }
 }
+
+
