@@ -1,5 +1,5 @@
 <% include ./partials/header %>
-  <div class="panel panel-default col-xs-5" id="guest-panel">
+  <div class="panel panel-default col-md-5" id="guest-panel">
     <div>
       <h2 class="text-center"><%= guest.name %>'s Reviews</h2>
       <h4 class='text-center'>Avg Rating 
@@ -18,7 +18,7 @@
      </ul>
    </div>
   </div>
-  <div class="panel panel-default col-xs-3" id="guest_rev">
+  <div class="panel panel-default col-md-3" id="guest_rev">
     <form style="text-align: center" action="/guests/<%= guestID  %>" method="post">
       <fieldset>
         <textarea id="guest_id" name="guest_id" style="display:none;" value="<%= guest.id %>"></textarea>

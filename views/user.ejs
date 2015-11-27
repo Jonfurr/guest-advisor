@@ -1,6 +1,6 @@
 <% include ./partials/header %>
     
-  <div class="panel panel-default col-xs-5" id="user-panel">
+  <div class="panel panel-default col-md-5" id="user-panel">
     <div >
       <h2 class="text-center"><%= reviews[0].userName %>'s Reviews</h2>
     </div>
@@ -12,7 +12,7 @@
       </ul>
     </div>
   </div>
-  <div class="row panel panel-default col-xs-3" id="review_panel">
+  <div class="row panel panel-default col-md-3 hidden-600" id="review_panel">
       <form action="/users" method="post">
           <h2 class="review_guest text-center">Review a Guest</h2>
           <div class='well'>

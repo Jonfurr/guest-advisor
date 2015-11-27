@@ -1,10 +1,30 @@
 body {
   background-image: url(/images/hotel.jpg);
-  background-position: top left;
-  background-size: 100%;
+  background-position: center center;
+  background-clip: fixed;
   background-repeat: no-repeat;
-  width: 100%;
-  margin: 0%;    
+  margin: 0 auto;    
+}
+a {
+  color: #335e91;
+}
+a:hover {
+  text-decoration: none;
+}
+#search-term {
+  margin-left: 25px;
+  margin-top: 25px;
+  width:30%;
+  display: inline;
+}
+.nav-links li{
+  list-style: none;
+  text-decoration: none;
+  display: inline;
+}
+.nav-button {
+  display: inline;
+  margin-top: 25px;
 }
 
 #live {
@@ -13,22 +33,20 @@ body {
 
 .container {
   width: 100%;
-  margin: 0px;
+  margin: 0 auto;
 }
 
 .well {
   margin-top: 1em;
   background-color: #fff;
 }
-.navbar-inverse {
-  background-color: #000;
-  padding: 5px;
-}
 
 .logo {
-  font-size: 2.5em;
+  font-size: 3.7em;
   font-family: 'Monoton', cursive;
   color: #335e91;
+  text-shadow: 1px 1px #fff;
+  margin-top: 10px;
 }
 
 
@@ -37,15 +55,8 @@ body {
   font-size: 1.5em;
 }
 
-input {
-  border: none;
-  border-bottom: 1px solid #000;
-}
-
 .submit {
- padding: 5px;
- border: 1px solid #000; 
- margin: 5px 0;
+ margin: 10px 0;
 }
 
 #sign-up-link {
@@ -71,7 +82,6 @@ input {
 
 #guest_name {
   font-size: 2.5em;
-
 }
 
 .panel-title {
@@ -83,11 +93,6 @@ input {
   border: 1px solid #335e91;
   margin: 3px;
 }
-
-a {
-  color: #335e91;
-}
-
 .ui-helper-hidden-accessible { 
   text-align: center;
   display:none; 
@@ -106,7 +111,7 @@ a {
   padding: 4px 0;
   margin: 2px 0 0 0;
   list-style: none;
-  background-color: #ffffff;
+  background-color: #fff;
   border-color: #ccc;
   border-color: rgba(0, 0, 0, 0.2);
   border-style: solid;
@@ -141,6 +146,19 @@ a {
       -moz-border-radius: 0px;
       background-image: none;
     }
+  }
+}
+
+@media all and (max-width: 600px) {
+  .hidden-600 {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+
+  .logo {
+    font-size: 2.2em;
+    text-align: center;
   }
 }
 
