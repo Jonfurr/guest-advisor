@@ -5,6 +5,10 @@ body {
   background-repeat: no-repeat;
   margin: 0 auto;    
 }
+.nav {
+  background-color: rgba(255,255,255,.5);
+  border-bottom: 1px solid #000;
+}
 a {
   color: #335e91;
 }
@@ -16,6 +20,10 @@ a:hover {
   margin-top: 25px;
   width:30%;
   display: inline;
+  border: 1px solid #000;
+}
+#submitit {
+  border: 1px solid #000;
 }
 .nav-links li{
   list-style: none;
@@ -25,8 +33,11 @@ a:hover {
 .nav-button {
   display: inline;
   margin-top: 25px;
+  border: 1px solid #000;
 }
-
+#content {
+  margin-top: 30px;
+}
 #live {
   list-style: none;
 }
@@ -43,32 +54,24 @@ a:hover {
 .logo {
   font-size: 3.7em;
   font-family: 'Monoton', cursive;
-  color: #335e91;
-  text-shadow: 1px 1px #fff;
-  margin-top: 10px;
+  color: #222;
+  margin:10px 0 20px 0;
 }
-
-
 #login_here {
   text-align: center;
   font-size: 1.5em;
 }
-
 .submit {
  margin: 10px 0;
 }
-
 #sign-up-link {
   text-align: center;
     font-size: .7em;
 }
-
 #new_user {
   text-align: center;
   font-size: 1.5em;  
 }
-
-
 #user_rev {
   height: 600px;
   overflow: scroll;
@@ -149,6 +152,16 @@ a:hover {
 }
 
 @media all and (max-width: 600px) {
+  body {
+    background-color: black;
+    background-image: none;
+  }
+  .nav-button {
+    margin-top: 0px;
+  }
+  #content {
+    
+  }
   .hidden-600 {
     opacity: 0;
     visibility: hidden;
