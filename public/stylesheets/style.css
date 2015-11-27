@@ -18,7 +18,7 @@ a:hover {
 #search-term {
   margin-left: 25px;
   margin-top: 25px;
-  width:30%;
+  width: 30%;
   display: inline;
   border: 1px solid #000;
 }
@@ -91,7 +91,7 @@ a:hover {
 }
 
 .panel {
-  background-color: rgba(255,255,255,.85);
+  background-color: rgba(255,255,255,.6);
   border: 1px solid #335e91;
   margin: 3px;
 }
@@ -157,10 +157,11 @@ a:hover {
     background-image: none;
   }
   .nav-button {
-    margin-top: 0px;
+    margin-top: 5px;
+    display: block;
   }
   #content {
-    
+
   }
   .hidden-600 {
     opacity: 0;
