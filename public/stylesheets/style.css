@@ -6,7 +6,7 @@ body {
   margin: 0 auto;    
 }
 .nav {
-  background-color: rgba(255,255,255,.5);
+  background-color: rgba(255,255,255,.8);
   border-bottom: 1px solid #000;
 }
 a {
@@ -36,7 +36,7 @@ a:hover {
   border: 1px solid #000;
 }
 #content {
-  margin-top: 30px;
+  margin-top: 15px;
 }
 #live {
   list-style: none;
@@ -50,7 +50,6 @@ a:hover {
   margin-top: 1em;
   background-color: #fff;
 }
-
 .logo {
   font-size: 3.7em;
   font-family: 'Monoton', cursive;
@@ -91,7 +90,7 @@ a:hover {
 }
 
 .panel {
-  background-color: rgba(255,255,255,.6);
+  background-color: rgba(255,255,255,.8);
   border: 1px solid #335e91;
   margin: 3px;
 }
@@ -150,7 +149,6 @@ a:hover {
     }
   }
 }
-
 @media all and (max-width: 600px) {
   body {
     background-color: black;
@@ -168,7 +166,6 @@ a:hover {
     visibility: hidden;
     display: none;
   }
-
   .logo {
     font-size: 2.2em;
     text-align: center;

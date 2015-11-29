@@ -1,3 +1,18 @@
 <% include ./partials/header %>
-      
+      <div class="row panel panel-default col-md-4" id="review_panel">
+      <form action="/users" method="post">
+          <h2 class="review_guest text-center">Review a Guest</h2>
+          <div class='well'>
+            <fieldset>
+                <label for="name">Guest Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter guest's name" />
+                <br />
+                <label for="email">Guest Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter guest's email" />
+                </br></br>
+                <input  class='submit' type="submit" value="Submit" />
+            </fieldset>
+          </div>
+      </form>
+  </div>
 <% include ./partials/footer %>

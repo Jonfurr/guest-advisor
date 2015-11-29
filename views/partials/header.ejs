@@ -15,13 +15,13 @@
       <div class='col-md-5'>
         <a class="logo" href="/users">GuestAdvisor</a>
       </div>
-      <div class='col-md-4'>
+      <div class='hidden-600 col-md-4'>
         <form role="search">
-            <input type="text" id ="search-term" class="hidden-600 form-control" placeholder="Search by email">
+            <input type="text" id ="search-term" class="form-control" placeholder="Search by email">
           <button type="submit" id ="submitit" class="hidden-600 btn btn-default"><i class='glyphicon glyphicon-search'></i> Search</button>
         </form> 
-        </div>
-      <div class='col-md-3 pull-right'>
+      </div>
+      <div class='col-md-3'>
         <ul class='nav-links'>
           <% if (user) { %>
           <li><a href='/users'><button type='button' class='nav-button btn btn-default'><i class="glyphicon glyphicon-home"></i> Home</button></a></li>
@@ -30,25 +30,24 @@
             <li><a href="/login"><button type='button' class='nav-button btn btn-default'><i class="glyphicon glyphicon-log-in"></i> Login</button></a></li>
             <li><a href="/new_user"><button type='button' class='nav-button btn btn-default'><i class="glyphicon glyphicon-user"></i> Sign Up</button></a></li>
           <% } %>
-          <li><button type='button' class='nav-button btn btn-default'><i class="glyphicon glyphicon-plus"></i> Review</button></li>
+          <li><a href="/reviews"><button type='button' class='nav-button btn btn-default'><i class="glyphicon glyphicon-plus"></i> Review</button></a></li>
         </ul>
       </div>
     </div>
-  <div class='container' id='content'>
-    <div class="hidden-600 panel panel-default col-md-3 col-md-offset-1">
-      <div>
-        <h2 class="text-center">Latest Reviews</h2>
+    <div class='container row' id='content'>
+      <div class="hidden-600 panel panel-default col-md-3" id='recent-panel'>
+        <div>
+          <h3 class="text-center">Latest Reviews</h3>
+        </div>
+        <div>
+          <ul class='list-group' id="live">
+          <% for (i=0;i<5;i++) { %>
+            <li class='list-group-item'><span><a href=<%='../users/'+reviews_main[i].user_ID %>><%=reviews_main[i].userName %></a> reviewed <a href=<%='/guests/'+ reviews_main[i].guest_ID %>><%=reviews_main[i].guestName %></a> </span></li>
+          <% } %>
+          </ul>
+        </div> 
+        
       </div>
-      <div class="panel-body">
-          <div>
-            <ul class='list-group' id="live">
-              <% for (i=0;i<5;i++) { %>
-                <li class='list-group-item'><span><a href=<%='../users/'+reviews_main[i].user_ID %>><%=reviews_main[i].userName %></a> reviewed <a href=<%='/guests/'+ reviews_main[i].guest_ID %>><%=reviews_main[i].guestName %></a> </span></li>
-              <% } %>
-            </ul>
-          </div> 
-      </div>
-    </div>
       
 
 
