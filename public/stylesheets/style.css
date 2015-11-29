@@ -163,6 +163,14 @@ button:focus {
     margin-top: 15px;
     display: block;
   }
+  #search-form {
+    margin-top: -15px;
+    margin-left: -15px;
+    display: block;
+  }
+  #search-term {
+    width: 160px;
+  }
   .hidden-600 {
     opacity: 0;
     visibility: hidden;

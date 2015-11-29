@@ -13,17 +13,17 @@
       <div class='col-md-5'>
         <a class="logo" href="/users">GuestAdvisor</a>
       </div>
-      <div class='hidden-600 col-md-4'>
-        <form role="search">
+      <div class='col-md-4'>
+        <form role="search" id='search-form'>
             <input type="text" id ="search-term" class="form-control" placeholder="Search by email">
-          <button type="submit" id ="submitit" class="hidden-600 btn btn-default"><i class='glyphicon glyphicon-search'></i> Search</button>
+          <button type="submit" id ="submitit" class="btn btn-default"><i class='glyphicon glyphicon-search'></i> Search</button>
         </form> 
       </div>
       <div class='col-md-3'>
         <ul class='nav-links'>
           <% if (user) { %>
-          <li><a href='/users'><button type='button' class='nav-button btn btn-default'><i class="glyphicon glyphicon-home"></i> Home</button></a></li>
-          <li><a href="/logout"><button type='button' class='nav-button btn btn-default'><i class="glyphicon glyphicon-log-out"></i> Logout</button></a></li>
+            <li><a href='/users'><button type='button' class='nav-button btn btn-default'><i class="glyphicon glyphicon-home"></i> Home</button></a></li>
+            <li><a href="/logout"><button type='button' class='nav-button btn btn-default'><i class="glyphicon glyphicon-log-out"></i> Logout</button></a></li>
           <% } else { %>
             <li><a href="/login"><button type='button' class='nav-button btn btn-default'><i class="glyphicon glyphicon-log-in"></i> Login</button></a></li>
             <li><a href="/new_user"><button type='button' class='nav-button btn btn-default'><i class="glyphicon glyphicon-user"></i> Sign Up</button></a></li>
