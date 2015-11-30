@@ -1,7 +1,7 @@
 <% include ./partials/header %>
   <div class="panel panel-default col-md-5" id="guest-panel">
     <div>
-      <h2 class="text-center"><%= guest.name %>'s Reviews</h2>
+      <h3 class="text-center"><%= guest.name %>'s Reviews</h3>
       <h4 class='text-center'>Avg Rating 
         <% var total = 0; %>
         <% for (i=reviews.length-1; i>=0; i--){ %>
@@ -20,22 +20,24 @@
   </div>
   <div class="panel panel-default col-md-3" id="guest_rev">
     <form style="text-align: center" action="/guests/<%= guestID  %>" method="post">
-      <fieldset>
-        <textarea id="guest_id" name="guest_id" style="display:none;" value="<%= guest.id %>"></textarea>
-        <label id="guest_name" for="review"><h2>Review <%=guest.name%></h2></label></br>
-        <input type="hidden" name="guest_name" value="<%=guest.name%>">
-        <textarea id="review" name="review" placeholder="Enter your guest review here"></textarea>
-        <br />
-        <label for="rating">Guest Rating:</label>
-        <select id="rating" name="rating">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select></br>
-        <input  class='submit' type="submit" value="Submit" />
-      </fieldset>
+      <div class='well'>
+        <fieldset>
+          <textarea id="guest_id" name="guest_id" style="display:none;" value="<%= guest.id %>"></textarea>
+          <label id="guest_name" for="review"><h3>Review <%=guest.name%></h3></label></br>
+          <input required type="hidden" name="guest_name" value="<%=guest.name%>">
+          <textarea id="review" name="review" placeholder="Enter your guest review here"></textarea>
+          <br />
+          <label for="rating">Guest Rating:</label>
+          <select id="rating" name="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select></br>
+          <input  class='submit btn btn-default' type="submit" value="Submit" />
+        </fieldset>
+      </div>
     </form>
   </div>
 

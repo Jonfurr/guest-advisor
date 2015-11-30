@@ -2,7 +2,7 @@
     
   <div class="panel panel-default col-md-5" id="user-panel">
     <div >
-      <h2 class="text-center"><%= reviews[0].userName %>'s Reviews</h2>
+      <h3 class="text-center"><%= reviews[0].userName %>'s Reviews</h3>
     </div>
     <div class="panel-body" id="user_rev">
       <ul class='list-group' style="list-style: none">
@@ -14,16 +14,16 @@
   </div>
   <div class="row panel panel-default col-md-3 hidden-600" id="review_panel">
       <form action="/users" method="post">
-          <h2 class="review_guest text-center">Review a Guest</h2>
+          <h3 class="review_guest text-center">Review a Guest</h3>
           <div class='well'>
             <fieldset>
                 <label for="name">Guest Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter guest's name" />
+                <input required type="text" id="name" name="name" placeholder="Enter guest's name" />
                 <br />
                 <label for="email">Guest Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter guest's email" />
+                <input required type="email" id="email" name="email" placeholder="Enter guest's email" />
                 </br></br>
-                <input  class='submit' type="submit" value="Submit" />
+                <input class='submit btn btn-default' type="submit" value="Submit" />
             </fieldset>
           </div>
       </form>
