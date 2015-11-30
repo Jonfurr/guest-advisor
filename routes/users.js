@@ -20,7 +20,7 @@ var LocalStrategy = require('passport-local').Strategy;
 			});
 		}
 		else {
-			res.redirect('/login');
+			res.redirect('/');
 		}
 	});
 

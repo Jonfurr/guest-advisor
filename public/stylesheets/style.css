@@ -68,6 +68,9 @@ button:focus {
   text-align: center;
   font-size: 1.5em;
 }
+#login{
+  padding: 0 20px;
+}
 .submit {
  margin: 10px 0;
 }
