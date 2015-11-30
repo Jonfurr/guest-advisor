@@ -20,10 +20,10 @@
   </div>
   <div class="panel panel-default col-md-3" id="guest_rev">
     <form style="text-align: center" action="/guests/<%= guestID  %>" method="post">
-      <div class='well'>
         <fieldset>
           <textarea id="guest_id" name="guest_id" style="display:none;" value="<%= guest.id %>"></textarea>
-          <label id="guest_name" for="review"><h3>Review <%=guest.name%></h3></label></br>
+          <label id="guest_name" for="review"><h3>Review <%=guest.name%></h3></label>
+          <div class='well'>
           <input required type="hidden" name="guest_name" value="<%=guest.name%>">
           <textarea id="review" name="review" placeholder="Enter your guest review here"></textarea>
           <br />

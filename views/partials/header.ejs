@@ -33,19 +33,16 @@
       </div>
     </div>
     <div class='container row' id='content'>
-      <div class="hidden-600 panel panel-default col-md-3" id='recent-panel'>
-        <div>
-          <h3 class="text-center">Latest Reviews</h3>
+        <div class="hidden-600 panel panel-default col-md-3 " id='recent-panel'>
+          <div>
+            <h3 class="text-center">Latest Reviews</h3>
+          </div>
+          <div>
+            <ul class='list-group' id="live">
+            <% for (i=0;i<5;i++) { %>
+              <li class='list-group-item'><span><a href=<%='../users/'+reviews_main[i].user_ID %>><%=reviews_main[i].userName %></a> reviewed <a href=<%='/guests/'+ reviews_main[i].guest_ID %>><%=reviews_main[i].guestName %></a> </span></li>
+            <% } %>
+            </ul>
+          </div> 
         </div>
-        <div>
-          <ul class='list-group' id="live">
-          <% for (i=0;i<5;i++) { %>
-            <li class='list-group-item'><span><a href=<%='../users/'+reviews_main[i].user_ID %>><%=reviews_main[i].userName %></a> reviewed <a href=<%='/guests/'+ reviews_main[i].guest_ID %>><%=reviews_main[i].guestName %></a> </span></li>
-          <% } %>
-          </ul>
-        </div> 
-        
-      </div>
-      
-
 
